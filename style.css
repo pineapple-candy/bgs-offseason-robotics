@@ -1,5 +1,5 @@
 body {
-    font-family: monospace;
+    font-family: "Inter", sans-serif, "Roboto";
     background-color: white;
     text-align: center;
     color: #ffffff;
@@ -8,16 +8,12 @@ body {
     margin-right: 0px;
 }
 
-.content {
-    margin-left: 4px;
-}
-
 /* Navbar styles */
 
 .navbar {
     box-sizing: border-box; 
     width: 100%;
-    height: 50px;
+    height: 60px;
     position: fixed;
     z-index: 1000000;
     display: flex;
@@ -27,16 +23,31 @@ body {
     font-weight: bold;
     outline: 0.5px solid rgb(235, 235, 235);
     align-items: center;
+
+    /* shadow */
+    box-shadow: 
+    0 2px 4px rgba(0,0,0,0.1),
+    0 4px 8px rgba(0,0,0,0.075),
+    0 8px 16px rgba(0,0,0,0.05);
 }
 
 .navbar a {
+    font-family: monospace;
     display: flex;
     font-weight: bold;
-    color: rgb(81, 81, 81);
+    color: rgb(53, 53, 53);
     text-decoration: none;
     font-size: 1rem;
     white-space: nowrap;
     text-overflow: ellipsis;
+
+    transition: transform 0.2s ease; /* smooth animation */
+}
+
+.navbar a:hover {
+    transform: translateY(2px);
+    text-decoration: underline;
+    color: rgb(161, 161, 161);
 }
 
 .side {
@@ -57,36 +68,124 @@ body {
     font-size: 0.8rem;
 }
 
-.navbar a:hover {
-    text-decoration: underline;
-}
+/* body */
 
 logo img {
     height: 40px;
     width: 40px
 }
 
-.text_with_image {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
 img {
     width: 50px
 }
 
-.bgs_blue {
-    font-style: italic;
-    font-weight:bold;
-    color: aqua;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: blue;
+/* 
+NOTE: 
+align-items, vertical
+justify-content, horizontal
+*/
+
+/* Typewriter effect */
+
+#typewriter::after {
+    content: "|";
+    animation: blink 0.6s infinite;
+}
+
+@keyframes blink {
+    29% {opacity: 1;}
+    30% {opacity: 0;}
+    69% {opacity: 0;}
+    79% {opacity: 1;}
+}
+
+/* hero stuff */
+.hero { 
+    width: 100vw;     
+    height: 60vh;
+    background-image: var(--img);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    align-items: flex-start;
+
+    display: flex;
+    flex-direction: column; /* stack caption and content vertically */
+
+    padding: 0px;
+    margin: 0px;
+}
+
+.hero .hero-content {
+    display: flex;
+    margin-top: auto; /* pushes link to bottom */
+}
+
+.hero a {
+    -webkit-text-stroke-width: 0.1vw;
+    -webkit-text-stroke-color: rgb(185, 185, 185);
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    /* text-shadow: 4px 4px rgba(255, 255, 255, 0.144); */
+
+    margin-left: 1rem;
+
+    font-family: monospace,"Roboto";
+    font-size: 9vw;
+
+    display: block;
+    justify-content: flex-start;
+}
+
+.hero .caption {
+
+    margin-top: 4rem;
+    justify-content: flex-start;
+    font-size: 1.5vw;
+}
+
+/* content stuff */
+
+.content {
+    /* margin-left: 2.5%;
+    margin-right: 2.5%; */
+
+    max-width: 2000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
     text-align: left;
 }
 
-button {
-    padding: 10px 20px;
-    font-size: 16px;                                                   
-    cursor: pointer;
+.content h1 { /* TIP TO SELF: will only work if h1 is a valid HTML element (so something like heading is invalid) */
+    color: black;
+    font-size: 26px;
+}
+
+.content b {
+    font-weight: bold;
+}
+
+.content h2 {
+    color: black;
+    font-weight: lighter;
+    font-size: 20px;
+}
+
+/* text types (go BGS) */
+.bgs_blue {
+    font-weight:bold;   
+    color: rgb(76, 183, 255);
+    -webkit-text-stroke-width: 0.01px;
+    -webkit-text-stroke-color: rgb(65, 118, 187);
+    text-align: left;
+}
+
+.code_font {
+    font-family: monospace;
 }
