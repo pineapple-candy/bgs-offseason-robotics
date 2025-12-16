@@ -172,6 +172,14 @@
         line-height: 1.4;
     }
 
+    .content .large_title {
+        color: black;
+        font-size: 7vw;
+        font-weight: bold;
+        padding-top: 0px;
+        margin: 0;
+    }
+
     .content h1 { /* TIP TO SELF: will only work if h1 is a valid HTML element (so something like heading is invalid) */
         color: black;
         font-size: 26px;
@@ -214,6 +222,56 @@
         padding: 5px;
     }
 
+    .content .large_box_checkers {
+        background-color: rgb(255, 255, 255);
+        border: 2px solid grey;
+        border-radius: 10px;
+        width: 100%;
+
+        display: flex;/* make the box a flex container */
+        flex-direction: column;/* stack content vertically */
+        justify-content: center;/* center content vertically */
+        align-items: center;/* center content horizontally */
+        
+        margin: 0 auto;
+        padding: 5px; /*NOTE: Padding doesn't work because its IN the parent*/
+        margin-bottom: 15px;
+        box-shadow: 
+        0 2px 4px #0000001a,
+        0 4px 8px rgba(0,0,0,0.075),
+        0 8px 16px rgba(0,0,0,0.05);
+
+        background-image: url(images/checkers.png);
+        background-position: 0% 0%;
+        background-size: 700px 500px;
+
+        animation: moveTexture 20s linear infinite
+    }
+
+    .content .large_box {
+        background-color: rgb(255, 255, 255);
+        border: 2px solid grey;
+        border-radius: 10px;
+        width: 100%;
+
+        display: flex;/* make the box a flex container */
+        flex-direction: column;/* stack content vertically */
+        justify-content: center;/* center content vertically */
+        align-items: center;/* center content horizontally */
+        
+        margin: 0 auto;
+        padding: 5px; /*NOTE: Padding doesn't work because its IN the parent*/
+        margin-bottom: 15px;
+        box-shadow: 
+        0 2px 4px #0000001a,
+        0 4px 8px rgba(0,0,0,0.075),
+        0 8px 16px rgba(0,0,0,0.05);
+    }
+
+    @keyframes moveTexture {
+        50% {background-position: 50% 50%;}
+    }
+
     .content .countdown {
         display: block;
         margin: 0 auto;
@@ -240,6 +298,41 @@
         text-align: left;
     }
 
+    .cure_all_colour {
+        font-family: 'Courier New', Courier, monospace;
+        font-weight:900;
+        color: rgb(255, 228, 76);
+        -webkit-text-stroke-width: 4px;
+        -webkit-text-stroke-color: rgb(187, 144, 65);
+        text-align: left;
+        top: 0px;
+        left: 0px;
+
+        position: relative; /*Note to self - this makesmovement of position rel. to the current pos.*/
+        animation: 
+        colourShift 3s linear infinite,
+        shiftAround 0.4s linear infinite;
+    }
+
+    .cure_all_colour:hover {
+
+    }
+
+    @keyframes colourShift {
+        50% {color: rgb(255, 153, 0)}
+    }
+
+    @keyframes shiftAround {
+        50% {
+            top: 2px;
+            left: 0.5px;
+        }
+        75% {
+            top: 2.5px;
+            left: -1.25px;
+        }
+    }
+
     .code_font {
         font-family: monospace;
         font-size: 20px;
@@ -250,6 +343,7 @@
         color: rgb(73, 132, 187);
     }
 
+    /* spacing */
     .spacer {
         height: 20px; /* vertical empty space */
         width: 100%;  /* full width */
