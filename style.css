@@ -173,11 +173,20 @@
     }
 
     .content .large_title {
-        color: black;
+        /* color: black; */
         font-size: 7vw;
         font-weight: bold;
         padding-top: 0px;
         margin: 0;
+    }
+    
+    .content .small_title {
+        font-size: 4vw;
+        font-weight: bold;
+        text-align: center;
+
+        display: block;
+        margin: 0 auto;
     }
 
     .content h1 { /* TIP TO SELF: will only work if h1 is a valid HTML element (so something like heading is invalid) */
@@ -207,16 +216,30 @@
         margin: 0 auto; /* 0 margins top and bototm, remaining space is distributed */
     }
 
+    .content .code_box {
+        box-sizing: border-box; 
+        background-color: rgb(235, 235, 235);
+        width: 100%;
+        border-left: 1.5vw solid rgb(175, 175, 175);
+
+        margin-bottom: 10px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
     .content .box {
         background-color: rgb(248, 252, 255);
         border: 2px solid grey;
         border-radius: 10px;
         width: 70%;
 
-        display: flex;/* make the box a flex container */
-        flex-direction: column;/* stack content vertically */
-        justify-content: center;/* center content vertically */
-        align-items: center;/* center content horizontally */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         
         margin: 0 auto;
         padding: 5px;
@@ -228,13 +251,13 @@
         border-radius: 10px;
         width: 100%;
 
-        display: flex;/* make the box a flex container */
-        flex-direction: column;/* stack content vertically */
-        justify-content: center;/* center content vertically */
-        align-items: center;/* center content horizontally */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         
         margin: 0 auto;
-        padding: 5px; /*NOTE: Padding doesn't work because its IN the parent*/
+        padding: 0px; /*NOTE: Padding doesn't work because its IN the parent (TO MAKE WIDTH ACCOUNT FOR PADDING, USE ... )*/
         margin-bottom: 15px;
         box-shadow: 
         0 2px 4px #0000001a,
@@ -260,7 +283,7 @@
         align-items: center;/* center content horizontally */
         
         margin: 0 auto;
-        padding: 5px; /*NOTE: Padding doesn't work because its IN the parent*/
+        padding: 0px; /*NOTE: Padding doesn't work because its IN the parent*/
         margin-bottom: 15px;
         box-shadow: 
         0 2px 4px #0000001a,
@@ -289,6 +312,32 @@
         font-size: 1rem;
     }
 
+    .image_side_box {
+        display: flex;
+        gap: 16px;
+        
+        align-items: top;
+        justify-content: flex-start;
+    }
+
+    .image_side_box img {
+        width: 30vw;
+        height: auto;   
+        flex-shrink: 0;
+
+        display: block;
+        margin:0;
+    }
+
+    .image_side_box caption {
+        
+    }
+
+    .image_side_box h1 {
+        display: block;
+        margin: 0 auto;
+    }
+ 
     /* text types (go BGS) */
     .bgs_blue {
         font-weight:bold;   
@@ -302,7 +351,7 @@
         font-family: 'Courier New', Courier, monospace;
         font-weight:900;
         color: rgb(255, 228, 76);
-        -webkit-text-stroke-width: 4px;
+        -webkit-text-stroke-width: 0.2vw;
         -webkit-text-stroke-color: rgb(187, 144, 65);
         text-align: left;
         top: 0px;
@@ -314,15 +363,11 @@
         shiftAround 0.4s linear infinite;
     }
 
-    .cure_all_colour:hover {
-
-    }
-
     @keyframes colourShift {
         50% {color: rgb(255, 153, 0)}
     }
 
-    @keyframes shiftAround {
+    /* @keyframes shiftAround {
         50% {
             top: 2px;
             left: 0.5px;
@@ -331,6 +376,13 @@
             top: 2.5px;
             left: -1.25px;
         }
+    } */
+
+    .winners_colour {
+        font-family: monospace;
+        color: rgb(144, 255, 93);
+        -webkit-text-stroke-width: 0.18vw;
+        -webkit-text-stroke-color: rgba(43, 112, 37, 0.568);
     }
 
     .code_font {
